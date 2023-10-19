@@ -1,7 +1,7 @@
 <?php
 
 
-namespace App\Form;,
+namespace App\Form;
 
 use App\Entity\Contact;
 use Symfony\Component\Form\AbstractType;
@@ -15,8 +15,8 @@ class ContactFormType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-            ->add('objet'),
-            ->add('email'),
+            ->add('objet')
+            ->add('email')
 
             //On a rajouté un label et on a rendu le champ optionnel en
             // donnant la valeur false à l'attribut required
@@ -33,8 +33,8 @@ class ContactFormType extends AbstractType
 
     public function configureOptions(OptionsResolver $resolver): void
     {
-        $resolver->setDefaults([,
-            'data_class' => Contact::class,
+        $resolver->setDefaults([
+            'data_class' => Contact::class
         ]);
     }
 }
