@@ -5,7 +5,7 @@ namespace App\Repository;
 use App\Entity\Artist;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
-
+use App\QueryBuilder;
 /**
  * @extends ServiceEntityRepository<Artist>
  *
@@ -21,6 +21,19 @@ class ArtistRepository extends ServiceEntityRepository
         parent::__construct($registry, Artist::class);
     }
 
+    public function getSomeArtists($name)
+    {
+        $qb = $this->createQueryBuilder('a');
+        $qb
+            ->andWhere('a.artist_name like :name')
+            ->setParameter('name', '%'.$name.'%')
+            ->orderBy('a.id', 'ASC')
+            ->setMaxResults(10);
+    
+        $artists = $qb->getQuery()->getResult(); // Stockez le résultat dans $artists
+    
+        return $artists; // Renvoyez les artistes trouvés
+    }
 //    /**
 //     * @return Artist[] Returns an array of Artist objects
 //     */
