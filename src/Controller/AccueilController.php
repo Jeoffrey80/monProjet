@@ -31,7 +31,6 @@ class AccueilController extends AbstractController
         //on appelle la fonction `findAll()` du repository de la classe `Artist` afin de récupérer tous les artists de la base de données;
 
         $artistes = $this->artistRepo->findAll();
-        // dd($artistes);
 
         return $this->render('accueil/index.html.twig', [
             'controller_name' => 'AccueilController',
