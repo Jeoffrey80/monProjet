@@ -28,7 +28,7 @@ class AccueilController extends AbstractController
     public function index(): Response
     {
        //on appelle le repository pour accéder à la fonction
-        $artistes = $this->artistRepo->getSomeArtists("Damso");
+        $artistes = $this->artistRepo->getSomeArtists("MM");
 
         //on teste le contenu de la variable $artistes : dd() veut dire Dump and Die
         dd($artistes); 
