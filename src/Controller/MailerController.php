@@ -22,7 +22,7 @@ class MailerController extends AbstractController
         try {
             
             $email = (new TemplatedEmail())
-                ->from('enzolocquet@gmail.com')
+                ->from('tututoto@gmail.com')
                 ->to('test@example.com')
                 ->subject('Time for Symfony Mailer!')
                 ->text('Sending emails is fun again!')
