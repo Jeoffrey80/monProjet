@@ -16,6 +16,7 @@ use Symfony\Component\Mailer\MailerInterface;
 
 // ...
 
+
 class ContactController extends AbstractController
 {
     #[Route('/contact', name: 'app_contact')]
