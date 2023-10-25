@@ -29,7 +29,7 @@ class ContactController extends AbstractController
             $data = $form->getData();
             //on stocke les données récupérées dans la variable $message
             $message = $data;
-
+            //persistance des données
             $entityManager->persist($message);
             $entityManager->flush();
 
