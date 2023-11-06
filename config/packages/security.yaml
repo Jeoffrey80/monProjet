@@ -34,9 +34,9 @@ security:
     # Note: Only the *first* access control that matches will be used
     access_control:
         # - { path: ^/admin, roles: ROLE_ADMIN }
-        # - { path: ^/contact, roles: ROLE_CLIENT }
+        - { path: ^/contact, roles: ROLE_CLIENT }
         - { path: ^/profil, roles: ROLE_CLIENT }
-
+        
 when@test:
     security:
         role_hierarchy:

@@ -6,6 +6,7 @@ use App\Repository\UtilisateurRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Security\Http\Attribute\IsGranted;
 
 class ProfilController extends AbstractController
 {
@@ -14,6 +15,7 @@ class ProfilController extends AbstractController
     public function __construct(UtilisateurRepository $userRepo){
         $this->userRepo = $userRepo;
     }
+    #[isGranted('ROLE_CLIENT', message: "Nous sommes désolés, vous ne disposez pas des autorisations nécessaires pour accèder à cette page!")]
     #[Route('/profil', name: 'app_profil')]
     public function index(): Response
     {
